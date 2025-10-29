@@ -33,9 +33,8 @@ public class Main {
                 float averageOfNumbers = (float) (firstNumber + secondNumber) / 2;
                 System.out.println("Result: " + averageOfNumbers);
                 break;
-            default: {
+            default:
                 System.out.println("No valid method was chosen, can't generate a sum");
-            }
         }
         scanner.close();
     }
