@@ -44,12 +44,44 @@ public class Main {
 
 
         // Uppgift 4 - Lagerhantering med Meny
-        // TODO: Inte färdig! Lägg till While-loop och flytta till egen Class. Fråga om sista delen av instruktioner, förstår ej.
+        Scanner scanner = new Scanner(System.in);
         String[] products = {"Äpplen", "Bananer", "Päron", "Kiwi"};
         int[] stockBalance = {10, 5, 8, 12};
+        int userSelection = 0;
 
-        checkStock(products, stockBalance);
-        updateStock(products, stockBalance);
+        do {
+            System.out.println("Lagerhantering");
+            System.out.println("1. Visa lagerstatus");
+            System.out.println("2. Uppdatera saldo (Lägg till/Ta bort)");
+            System.out.println("3. Avsluta");
+
+            System.out.println("Välj vad du vill göra");
+            if (scanner.hasNextInt()) {
+                userSelection = scanner.nextInt();
+            } else {
+                System.out.println("Du valde inte ett giltigt alternativ, försök igen.");
+                scanner.next();
+                continue;
+            }
+
+
+            switch (userSelection) {
+                case 1:
+                    checkStock(products, stockBalance);
+                    break;
+                case 2:
+                    updateStock(products, stockBalance);
+                    break;
+                case 3:
+                    System.out.println("Avslutar...");
+                    break;
+                default:
+                    System.out.println("Du valde inte ett giltigt alternativ, försök igen.");
+            }
+        }
+        while (userSelection != 3);
+
+        scanner.close();
     }
 
     public static void checkStock (String[] products, int[] stockBalance) {
@@ -71,7 +103,7 @@ public class Main {
     }
 
     public static void updateStock (String[] products, int[] stockBalance) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); //TODO: remove?
         System.out.println("Vilken av produkterna Äpplen, Bananer, Päron, Kiwi vill du uppdatera?");
         String productToChange = scanner.nextLine();
 
@@ -97,6 +129,7 @@ public class Main {
         stockBalance[productToChangeIndex] = newStock;
         System.out.println("Produkten " + products[productToChangeIndex] + " har nytt lagersaldo " + stockBalance[productToChangeIndex]);
 
-        scanner.close();
+        // TODO: remove?
+        // scanner.close();
     }
 }
