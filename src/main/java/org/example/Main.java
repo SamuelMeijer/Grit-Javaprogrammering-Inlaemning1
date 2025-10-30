@@ -5,10 +5,12 @@ import java.util.ArrayList;
 
 public class Main {
     static void main() {
-
+        /* **** REMOVE COMMENT TO RUN ASSIGNMENT 1 ****
         // Uppgift 1 - Kalkylator
         Calculator calculator = new Calculator();
         calculator.runCalculation();
+        **** REMOVE COMMENT TO RUN ASSIGNMENT 1 **** */
+
 
 
         /* **** REMOVE COMMENT TO RUN ASSIGNMENT 2 ****
@@ -26,8 +28,6 @@ public class Main {
          **** REMOVE COMMENT TO RUN ASSIGNMENT 2 **** */
 
 
-
-        /* **** REMOVE COMMENT TO RUN ASSIGNMENT 3 ****
         // Uppgift 3 - Enkelt Prisvalideringssystem
         int personAge = 23;
         String personStatus = "Student";
@@ -37,7 +37,7 @@ public class Main {
         double finalPrice = PriceCalculator.getPrice(100, ageStatus, discountStatus);
         System.out.println("Personen är " + personAge + " år gammal och har status " + personStatus);
         System.out.println("Det slutgiltiga priset är: " + finalPrice);
-        **** REMOVE COMMENT TO RUN ASSIGNMENT 3 **** */
+
 
 
 
