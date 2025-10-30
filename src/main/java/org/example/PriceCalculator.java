@@ -1,16 +1,14 @@
 package org.example;
 
+import java.util.Objects;
+
 public class PriceCalculator {
     public static boolean validateAge (int age) {
-        if ( 18 <= age && age <= 65) {
-            return true;
-        } else {
-            return false;
-        }
+        return 18 <= age && age <= 65;
     }
 
     public static boolean validateDiscount (String status) {
-        return status == "Student" || status == "Pensionär";
+        return Objects.equals(status, "Student") || Objects.equals(status, "Pensionär");
     }
 
     public static double getPrice (double grundpris, boolean isTarget, boolean hasDiscount) {
