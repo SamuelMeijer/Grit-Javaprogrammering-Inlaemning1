@@ -5,11 +5,10 @@ import java.util.ArrayList;
 
 public class Main {
     static void main() {
-        /* **** REMOVE COMMENT TO RUN ASSIGNMENT 1 ****
+
         // Uppgift 1 - Kalkylator
         Calculator calculator = new Calculator();
         calculator.runCalculation();
-        **** REMOVE COMMENT TO RUN ASSIGNMENT 1 **** */
 
 
         /* **** REMOVE COMMENT TO RUN ASSIGNMENT 2 ****
@@ -26,6 +25,8 @@ public class Main {
         }
          **** REMOVE COMMENT TO RUN ASSIGNMENT 2 **** */
 
+
+
         /* **** REMOVE COMMENT TO RUN ASSIGNMENT 3 ****
         // Uppgift 3 - Enkelt Prisvalideringssystem
         int personAge = 23;
@@ -38,6 +39,9 @@ public class Main {
         System.out.println("Det slutgiltiga priset är: " + finalPrice);
         **** REMOVE COMMENT TO RUN ASSIGNMENT 3 **** */
 
+
+
+        /* **** REMOVE COMMENT TO RUN ASSIGNMENT 4 ****
         // Uppgift 4 - Lagerhantering med Meny
         // TODO: Inte färdig! Lägg till While-loop och flytta till egen Class. Fråga om sista delen av instruktioner, förstår ej.
         String[] productsArr = {"Äpplen", "Bananer", "Päron", "Kiwi"};
@@ -85,5 +89,6 @@ public class Main {
         System.out.println("Produkten " + productToChange + " har nytt lagersaldo " + stockBalance[indexOfProduct]);
 
         scanner.close();
+        **** REMOVE COMMENT TO RUN ASSIGNMENT 4 **** */
     }
 }

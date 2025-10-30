@@ -16,30 +16,54 @@ public class Calculator {
             secondNumber = scanner.nextInt();
             scanner.nextLine(); // Consuming the leftover new line from 'scanner.nextInt()'.
             System.out.println("Please input one of the following methods: addition, subtraction, multiplication, division, average");
-            typeOfCalc = scanner.nextLine();
+            typeOfCalc = scanner.nextLine().toUpperCase();
 
             switch (typeOfCalc) {
-                case "addition":
-                    System.out.println("Result: " + firstNumber + " + " + secondNumber + " = " + (firstNumber + secondNumber));
+                case "ADDITION":
+                    additionCalc(firstNumber,secondNumber);
                     break;
-                case "subtraction":
-                    System.out.println("Result: " + firstNumber + " - " + secondNumber + " = " + (firstNumber - secondNumber));
+                case "SUBTRACTION":
+                    subtractionCalc(firstNumber,secondNumber);
                     break;
-                case "multiplication":
-                    System.out.println("Result: " + firstNumber + " * " + secondNumber + " = " + (firstNumber * secondNumber));
+                case "MULTIPLICATION":
+                    multiplicationCalc(firstNumber,secondNumber);
                     break;
-                case "division":
-                    float quotientOfNumbers = (float) firstNumber / secondNumber;
-                    System.out.println("Result: " + firstNumber + " / " + secondNumber + " = " + quotientOfNumbers);
+                case "DIVISION":
+                    divisionCalc(firstNumber,secondNumber);
                     break;
-                case "average":
-                    float averageOfNumbers = (float) (firstNumber + secondNumber) / 2;
-                    System.out.println("Result: " + averageOfNumbers);
+                case "AVERAGE":
+                    averageCalc(firstNumber,secondNumber);
                     break;
                 default:
                     System.out.println("No valid method was chosen, can't generate a sum");
             }
 
         scanner.close();
+    }
+
+    public void additionCalc (int firstNumber, int secondNumber) {
+             System.out.println("Result: " + firstNumber + " + " + secondNumber + " = " + (firstNumber + secondNumber));
+    }
+
+    public void subtractionCalc (int firstNumber, int secondNumber) {
+            System.out.println("Result: " + firstNumber + " - " + secondNumber + " = " + (firstNumber - secondNumber));
+    }
+
+    public void multiplicationCalc (int firstNumber, int secondNumber) {
+            System.out.println("Result: " + firstNumber + " * " + secondNumber + " = " + (firstNumber * secondNumber));
+    }
+
+    public void divisionCalc (int firstNumber, int secondNumber) {
+             if (secondNumber == 0) {
+                 System.out.println("Can't divide by zero, try again!");
+             } else {
+                 float quotientOfNumbers = (float) firstNumber / secondNumber;
+                 System.out.println("Result: " + firstNumber + " / " + secondNumber + " = " + quotientOfNumbers);
+             }
+    }
+
+    public void averageCalc (int firstNumber, int secondNumber) {
+            float averageOfNumbers = (float) (firstNumber + secondNumber) / 2;
+            System.out.println("Result: " + averageOfNumbers);
     }
 }
