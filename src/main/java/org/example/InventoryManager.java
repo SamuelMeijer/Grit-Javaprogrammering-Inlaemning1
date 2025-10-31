@@ -37,11 +37,18 @@ public class InventoryManager {
         // Update stock of product
         System.out.println("Produkten " + products[productToChangeIndex] + " har lagersaldo " + stockBalance[productToChangeIndex]);
         System.out.println("Ange nytt lagersaldo: ");
-        int newStock = inventoryScanner.nextInt();
+
+        int newStock = stockBalance[productToChangeIndex];
+        if (inventoryScanner.hasNextInt()) {
+            newStock = inventoryScanner.nextInt();
+        } else {
+            System.out.println("Du valde inte ett giltigt alternativ, försök igen.");
+            inventoryScanner.next();
+        }
 
         // Check if stock is < 0
         if (newStock < 0) {
-            System.out.println("Lagersaldo kan inte vara negativt. Försök igen.");
+            System.out.println("Lagersaldo kan inte vara negativt, försök igen.");
             return;
         }
 
